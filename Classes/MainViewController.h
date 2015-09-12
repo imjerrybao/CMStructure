@@ -1,6 +1,6 @@
 //
 //  MainViewController.h
-//  buddy
+//  CMStructure
 //
 //  Created by Jerry on 5/7/15.
 //  Copyright (c) 2015 Jerry. All rights reserved.

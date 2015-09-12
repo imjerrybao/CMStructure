@@ -1,12 +1,13 @@
 //
 //  MainViewController.m
-//  buddy
+//  CMStructure
 //
 //  Created by Jerry on 5/7/15.
 //  Copyright (c) 2015 Jerry. All rights reserved.
 //
 
 #import "MainViewController.h"
+#import "BaseNavigationController.h"
 
 @interface MainViewController () <UITabBarControllerDelegate>
 @property (nonatomic, strong) NSArray *classes;
@@ -45,7 +46,7 @@
     int i = 0;
     for (Class class in _classes) {
         UIViewController *vc = (UIViewController *)[[class alloc] init];
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:vc];
         nav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[_titles objectAtIndex:i] image:[_images objectAtIndex:i] selectedImage:[_selectedImages objectAtIndex:i]];
         nav.tabBarItem.tag = 1000+i;
         [self unSelectedTapTabBarItems:nav.tabBarItem];
