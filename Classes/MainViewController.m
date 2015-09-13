@@ -23,26 +23,28 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (id)initWithClasses:(NSArray *)classes titles:(NSArray *)titles images:(NSArray *)images selectedImages:(NSArray *)selectedImages
+- (instancetype)initWithClasses:(NSArray *)classes titles:(NSArray *)titles images:(NSArray *)images selectedImages:(NSArray *)selectedImages
 {
+    _classes = [NSArray arrayWithArray:classes];
+    _titles = [NSArray arrayWithArray:titles];
+    _images = [NSArray arrayWithArray:images];
+    _selectedImages = [NSArray arrayWithArray:selectedImages];
+    
     self = [super init];
-    if (self) {
-        _classes = [NSArray arrayWithArray:classes];
-        _titles = [NSArray arrayWithArray:titles];
-        _images = [NSArray arrayWithArray:images];
-        _selectedImages = [NSArray arrayWithArray:selectedImages];
-    }
+    
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
     self.delegate = self;
     [[UITabBar appearance] setTintColor:[UIColor colorWithHex:0x48cfae]];
     
+    NSMutableArray *tabs = [NSMutableArray array];
     int i = 0;
     for (Class class in _classes) {
         UIViewController *vc = (UIViewController *)[[class alloc] init];
@@ -51,8 +53,11 @@
         nav.tabBarItem.tag = 1000+i;
         [self unSelectedTapTabBarItems:nav.tabBarItem];
         [self selectedTapTabBarItems:nav.tabBarItem];
+        [tabs addObject:nav];
         i++;
     }
+    
+    self.viewControllers = tabs;
     self.selectedIndex = 0;
 }
 
