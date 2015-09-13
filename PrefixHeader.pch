@@ -1,13 +1,13 @@
 //
 //  PrefixHeader.pch
-//  CameraRuler
+//  CMStructure
 //
 //  Created by Jerry on 15/1/29.
 //  Copyright (c) 2015年 Jerry. All rights reserved.
 //
 
-#ifndef CloseCommunity_PrefixHeader_pch
-#define CloseCommunity_PrefixHeader_pch
+#ifndef CMStructure_PrefixHeader_pch
+#define CMStructure_PrefixHeader_pch
 
 
 #ifdef __OBJC__
