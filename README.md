@@ -1,4 +1,8 @@
 # CMStructure
 
 
-- $(SRCROOT)/CloseCommunity/PrefixHeader.pch
+- add PrefixHeader
+
+  `````
+  $(SRCROOT)/CloseCommunity/PrefixHeader.pch
+  `````
