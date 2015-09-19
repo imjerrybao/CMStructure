@@ -3,6 +3,6 @@
 
 - add PrefixHeader
 
-  `````
-  $(SRCROOT)/CloseCommunity/PrefixHeader.pch
-  `````
+`````
+$(SRCROOT)/CloseCommunity/PrefixHeader.pch
+`````
